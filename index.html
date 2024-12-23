@@ -1,11 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SWT</title>
+    <link rel="icon" type="image/x-icon" href="./IMG/logo.png">
+
+    <link rel="stylesheet" href="./CSS/cauhinhtrangchu.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-    <p>HELLO WORLD</p>
+    <sticknav>    
+        <div id="top-mess" class="top-message">
+            <div class="top-message-content container text-center">
+                <span class="glyphicon glyphicon-bullhorn"></span> HIỆN TẠI WEBSITE VẪN ĐANG PHÁT TRIỂN THÊM,<a href="https://bit.ly/yeuvl">BẤM VÀO ĐÂY</a> ĐỂ LIÊN HỆ ADMIN!...
+                <span id="top-mess-hide" class="top-message-icon glyphicon glyphicon-chevron-up hidden-xs"></span>
+            </div>
+        </div>
+        <!-- / top-mess -->
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <img src="./IMG/logo.png" width="70" height="70">
+                <a class="navbar-brand" href="index.html">SWT</a> </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html"><img id="svgImage" src="./ICON/trangchu.svg"></a></li><!--Trang Chủ-->
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img id="svgImage" src="./ICON/banthan.svg"><span class="caret"></span></a><!--Bản thân-->
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Trang bản thân</a></li>
+                            <li><a href="#">Cài đặt quyền riêng tư</a></li>
+                            <li><a href="#">Cài đặt thông tin đăng nhập</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Thiết bị</li>
+                            <li><a href="#">Tổ chức & sự kiện</a></li>
+                            <li><a href="#">Trang trí</a></li>
+                            <li><a href="#">Nguồn WEB</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img id="svgImage" src="./ICON/tinnhan.svg"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li></li>
+                            </ul>
+                        </li><!-- Tin nhắn -->
+                        <li><a href="#">Thông báo</a></li><!--Thông báo-->
+                        <li><a href="#">Cài đặt<span class="sr-only">(current)</span></a></li><!--Cài đặt-->
+                        <li><a href="#">Đăng nhập</a></li><!--Đăng nhập-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </sticknav>
+
+    <main>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Chào mừng đến với trang website giải trí vler của Kim Tuấn!</h1>
+                <p>Thông tin chi tiết:</p>
+                <p><tentruyen>Yêu yêu cái thằng bố mày</tentruyen>
+                    <noidungtruyen>
+                    
+                    <br><br> Một ông bố suốt ngày phàn nàn với thằng con:
+                   <br> – Trai tráng ngần này tuổi đầu rồi mà vẫn không tài nào có được con bồ, thằng này kém quá!
+                   <br> Thằng con gân cổ :
+                   <br> – Bố có giỏi thì tán thử xem, con với bố ra ngoài kia, thi xem thằng nào tán được trước?
+                   <br>  Hai bố con ra ngõ! Thấy 1 cô bé rất xinh đi xe đạp lướt qua, anh con nhanh nhảu tán tỉnh
+                   <br> – Em ơi anh yêu em em có yêu anh không?
+                   <br> Gặp đúng cô đanh đá, cô này ngoái lại :
+                   <br> – Yêu yêu cái thằng bố mày ý!
+                   <br> Ông bố nhảy cẫng lên:
+                   <br> – Đấy! Thấy chưa… Mày thua .
+                   <br> !!!</noidungtruyen></p>
+                <p> <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a> </p>
+              <iframe width="400" height="120" src="diachi.html"></iframe>
+            </div>
+        </div>
+      </main>
+      
+        <!-- / container -->
+
+
+    <!-- ĐIỆN THOẠI LIÊN HỆ -->
+    <div class="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon" style="left: -50px; bottom: 150px; position: fixed;">
+        <div class="phonering-alo-ph-circle"></div>
+        <div class="phonering-alo-ph-circle-fill"></div>
+        <a href="tel:+84973336178"></a>
+        <div class="phonering-alo-ph-img-circle">
+        <a href="tel:+84973336178"></a>
+        <a href="tel:+84973336178" class="pps-btn-img " title="Liên hệ">
+        </a>
+        </div>
+       </div>
+       <a href="tel:+84973336178">
+        <span style="left: 90px; bottom: 30px; position: fixed; background-color: rgba(51, 51, 51, 0.75); color: yellow; padding: 5px 10px; border-radius: 5px; font-size: 20px; z-index: 10000;"><div>Hotline!</div></span></a>
+    <!--END-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+ <script src="./JS/codinh.js"></script>
+<script type="text/javascript">
+	$(window).load(function() {
+	    $('#top-mess').slideDown('fast');
+	});
+
+	$(document).ready(function() {
+		$('#top-mess-hide').click(function() {
+	        if ($('#top-mess').is(':visible')) {
+	            $('#top-mess').slideUp('fast');
+	        }
+	    });
+	});
+
+  
+</script>
 </body>
 </html>
