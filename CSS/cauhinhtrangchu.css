@@ -11,6 +11,12 @@
     font-weight:normal;
     font-style:normal;
    }
+@font-face {
+    font-family:so3;
+    src:url('../FONT/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight:normal;
+    font-style:normal;
+   }
    sticknav {
     font-family:so1;
     font-size: 25px;
@@ -23,6 +29,16 @@
     noidungtruyen {
     font-family:so2;
     font-size: 25px;
+    }
+    .Login{
+    font-family: so3;
+    font-size: 40px;
+    font-weight: bold;
+    }
+    .NoidungLogin{
+    font-family: so3;
+    font-size: 20px;
+    font-weight: bold;
     }
 
 /* TOP MESSAGE*/
