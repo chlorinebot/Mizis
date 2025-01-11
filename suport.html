@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        .error { color: red; }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function validateForm() {
+            let errors = false;
+
+            // Clear previous errors
+            document.querySelectorAll('.error').forEach(e => e.textContent = '');
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            const confirmEmail = document.getElementById('confirmEmail').value;
+            if (email !== confirmEmail) {
+                document.getElementById('emailError').textContent = 'Emails do not match.';
+                errors = true;
+            }
+
+            // Validate password
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                document.getElementById('passwordError').textContent = 'Password must include uppercase letters, numbers, and special characters.';
+                errors = true;
+            }
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                errors = true;
+            }
+
+            // Validate CAPTCHA
+            const captchaResponse = grecaptcha.getResponse();
+            if (captchaResponse.length === 0) {
+                document.getElementById('captchaError').textContent = 'Please complete the CAPTCHA.';
+                errors = true;
+            }
+
+            return !errors;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form action="/submit-registration" method="post" onsubmit="return validateForm()">
+        <div class="container">
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="confirmEmail"><b>Confirm Email</b></label>
+            <input type="email" placeholder="Confirm Email" name="confirmEmail" id="confirmEmail" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            <span id="passwordError" class="error"></span>
+
+            <label for="confirmPassword"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" required>
+            <span id="confirmPasswordError" class="error"></span>
+
+            <label for="captcha"><b>Captcha</b></label>
+            <div class="g-recaptcha" data-sitekey="6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-"></div>
+            <span id="captchaError" class="error"></span>
+
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</body>
+</html>

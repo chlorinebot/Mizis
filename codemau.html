@@ -1,0 +1,54 @@
+document.getElementById('confirmPasswordError').textContent = 'Mật khẩu chưa giống nhau!';
+confirmPassword.style.border = '1px solid red';
+errors = true;
+if (!firstInvalidField) firstInvalidField = confirmPassword;
+}
+
+// Keep the submit button enabled
+document.getElementById('submitBtn').disabled = false;
+
+// Automatically focus on the first invalid field
+if (errors) {
+if (firstInvalidField) {
+    firstInvalidField.focus();
+}
+}
+
+return !errors;
+}
+
+// Add event listeners to highlight errors when input changes
+document.querySelectorAll('.input-field').forEach(field => {
+field.addEventListener('input', () => {
+if (field.type === 'text') {
+    document.getElementById('usernameError').textContent = '';
+    document.getElementById('username').style.border = '1px solid #ccc';
+}
+if (field.type === 'email') {
+    document.getElementById('emailError').textContent = '';
+    document.getElementById('email').style.border = '1px solid #ccc';
+    document.getElementById('confirmEmail').style.border = '1px solid #ccc';
+}
+if (field.type === 'password') {
+    document.getElementById('passwordError').textContent = '';
+    document.getElementById('password').style.border = '1px solid #ccc';
+    document.getElementById('confirmPasswordError').textContent = '';
+    document.getElementById('confirmPassword').style.border = '1px solid #ccc';
+}
+});
+});
+
+$(window).load(function() {
+$('#top-mess').slideDown('fast');
+});
+
+$(document).ready(function() {
+$('#top-mess-hide').click(function() {
+if ($('#top-mess').is(':visible')) {
+    $('#top-mess').slideUp('fast');
+}
+});
+});
+</script>
+</body>
+</html>

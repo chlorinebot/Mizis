@@ -6,11 +6,11 @@ function validateForm() {
     document.querySelectorAll('.error').forEach(e => e.textContent = '');
     document.querySelectorAll('.input-field').forEach(field => field.style.border = '1px solid #ccc');
 
-    // Validate username (only lowercase letters and digits)
+    // Validate username
     const username = document.getElementById('username');
-    const usernameRegex = /^[a-z0-9]+$/;
+    const usernameRegex = /^[a-z]+$/;
     if (!usernameRegex.test(username.value)) {
-        document.getElementById('usernameError').textContent = 'Tên người dùng chỉ được chứa chữ thường và chữ số.';
+        document.getElementById('usernameError').textContent = 'Tên người dùng chỉ được phép chữ thường (a-z)!';
         username.style.border = '1px solid red';
         errors = true;
         if (!firstInvalidField) firstInvalidField = username;
@@ -44,32 +44,30 @@ function validateForm() {
         if (!firstInvalidField) firstInvalidField = confirmPassword;
     }
 
+    // Keep the submit button enabled
+    document.getElementById('submitBtn').disabled = false;
+
     // Focus on the first invalid field
     if (firstInvalidField) {
         firstInvalidField.focus();
     }
 
-    // Prevent form submission if there are errors
-    if (errors) {
-        return false;  // Chặn hành động submit
-    }
-
-    return true;  // Nếu không có lỗi, form sẽ được gửi
+    return !errors;  // Return false as errors will be true if there are validation issues
 }
 
-// Add event listeners to highlight errors when input changes
+// Add event listeners for real-time validation feedback
 document.querySelectorAll('.input-field').forEach(field => {
     field.addEventListener('input', () => {
         if (field.id === 'username') {
             document.getElementById('usernameError').textContent = '';
             document.getElementById('username').style.border = '1px solid #ccc';
         }
-        if (field.type === 'email') {
+        if (field.id === 'email' || field.id === 'confirmEmail') {
             document.getElementById('emailError').textContent = '';
             document.getElementById('email').style.border = '1px solid #ccc';
             document.getElementById('confirmEmail').style.border = '1px solid #ccc';
         }
-        if (field.type === 'password') {
+        if (field.id === 'password' || field.id === 'confirmPassword') {
             document.getElementById('passwordError').textContent = '';
             document.getElementById('password').style.border = '1px solid #ccc';
             document.getElementById('confirmPassword').style.border = '1px solid #ccc';

@@ -47,38 +47,24 @@
         <div class="container NoidungLogin">
             <label for="username"><b>Tên người dùng</b></label>
             <br><input type="text" placeholder="Enter Username" name="username" id="username" required>
-
+            <br><span id="usernameError" class="error" style="color:red;"></span> 
             <br><label for="email"><b>Email</b></label>
             <br><input type="email" placeholder="Enter Email" name="email" id="email" required>
-            <br><span id="emailError" class="error"></span>
+            <br><span id="emailError" class="error" style="color:red;"></span>
 
             <br><label for="confirmEmail"><b>Xác nhận Email</b></label>
             <br><input type="email" placeholder="Confirm Email" name="confirmEmail" id="confirmEmail" required>
 
             <br><label for="password"><b>Mật khẩu</b></label>
             <br><input type="password" placeholder="Enter Password" name="password" id="password" required>
-            <br><span id="passwordError" class="error"></span>
+            <br><span id="passwordError" class="error" style="color:red;"></span>
 
             <br><label for="confirmPassword"><b>Xác nhận mật khẩu Password</b></label>
             <br><input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" required>
-            <span id="confirmPasswordError" class="error"></span>
+            <br><span id="confirmPasswordError" class="error" style="color:red;"></span>
+            <br>
 
-            <div id="captchaError"><!-- BEGIN: ReCAPTCHA implementation example. --><div id="recaptcha-demo" class="g-recaptcha" data-sitekey="6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" data-callback="onSuccess" data-action="action"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-cbifnou8sas9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-&amp;co=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbTo0NDM.&amp;hl=vi&amp;v=zIriijn3uj5Vpknvt_LnfNbF&amp;size=normal&amp;sa=action&amp;cb=3ucbisdfws5"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div><script nonce="">
-                var onSuccess = function(response) {
-                  var errorDivs = document.getElementsByClassName("recaptcha-error");
-                  if (errorDivs.length) {
-                    errorDivs[0].className = "";
-                  }
-                  var errorMsgs = document.getElementsByClassName("recaptcha-error-message");
-                  if (errorMsgs.length) {
-                    errorMsgs[0].parentNode.removeChild(errorMsgs[0]);
-                  }
-                  };</script><!-- Optional noscript fallback. --><noscript>
-                <div style="width: 302px; height: 462px;"><iframe src="/recaptcha/api/fallback?k=6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" frameborder="0" scrolling="no"></iframe><div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"></textarea></div></div><br></noscript><!-- END: ReCAPTCHA implementation example. -->
-            </div>
-            <span id="captchaError" class="error"></span>
-
-            <br><button type="submit">Đăng ký &raquo;   </button>
+            <br><button type="submit" id="submitBtn">Đăng ký &raquo;   </button>
         </div>
     </form>
                 <p> <a class="btn btn-lg btn-primary" href="../INFO/info.html" role="button">Xem điều khoản dịch vụ &raquo;</a> </p>
@@ -110,7 +96,7 @@
  <script src="../JS/codinh.js"></script>
  <script src="../JS/logup.js"></script>
 <script type="text/javascript">
-	$(window).load(function() {
+    	$(window).load(function() {
 	    $('#top-mess').slideDown('fast');
 	});
 
