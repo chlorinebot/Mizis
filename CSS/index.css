@@ -1,0 +1,13 @@
+.img{
+    position: relative;
+    display: inline-block   ;
+}
+.txt{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
